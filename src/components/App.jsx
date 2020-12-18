@@ -1,11 +1,13 @@
 import React from 'react'
-
+import Header from './Header'   
 
 const App = () => {
     return (
-        <div>
-            <h1>Billie Eilish</h1>
-        </div>
+        <>
+            <Header >
+                Brain Dump
+            </Header>
+        </>
     )
 }
 
