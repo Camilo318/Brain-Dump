@@ -3,11 +3,12 @@
     width: 90%;
     max-width: 610px;
     margin: 42px auto 1.125rem auto;
-    justify-content: space-around;
     border-bottom: 1px solid #BDBDBD;
 }
 
 .nav__item {
+    flex: 1;
+    text-align: center;
     font-size: 1rem;
     font-weight: 600;
     padding: 1.125rem;
@@ -24,9 +25,9 @@
         bottom: 0;
         border-radius: 4px 4px 0 0;
         background-color: #2F80ED;
-        width: 150%;
+        width: 110%;
         height: 4px;
-        left: -25%;
+        left: -5%;
         transform-origin: 0 center;
         transform: scaleX(0);
         transition: transform 0.3s ease;

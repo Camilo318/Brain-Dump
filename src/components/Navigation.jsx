@@ -4,15 +4,15 @@ const Navigation = () => {
     return (
         <nav>
             <div className="nav__container">
-                {/* <div className="nav__item">
+                <div className="nav__item">
                     All
-                </div> */}
+                </div>
                 <div className="nav__item">
                     Active
                 </div>
-                {/* <div className="nav__item">
+                <div className="nav__item">
                     Completed
-                </div> */}
+                </div>
             </div>
         </nav>
     )
