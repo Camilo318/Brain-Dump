@@ -1,0 +1,40 @@
+.add {
+    width: clamp(300px, 90%, 610px);
+    margin: 0 auto;
+    display: flex;
+
+    input {
+        height: 56px;
+        border: 1px solid #BDBDBD;
+        border-radius: 12px;
+        flex: 1;
+        font-weight: 400;
+        font-family: 'Raleway';
+        padding: 1rem;
+        font-size: 0.875rem;
+        &:focus {
+            outline: none;
+            border: 1px solid #2F80ED;
+        }
+    }
+
+    button {
+        border-radius: 12px;
+        background-color: #2F80ED;
+        border: none;
+        height: 56px;
+        color: white;
+        flex: 0 0 109px;
+        margin-left: 1.5rem;
+        font-weight: 600;
+        font-family: 1rem;
+        font-family: 'Raleway';
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(127, 177, 243, 0.4);
+        &:focus {
+            outline: none;
+            border: 1px solid #2F80ED;
+        }
+    }
+
+}
