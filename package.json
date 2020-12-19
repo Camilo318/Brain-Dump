@@ -5,7 +5,11 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["./src/__test__/setupTest.js"]
   },
   "keywords": [],
   "author": "Camilo Perilla <camiloa0318@gmail.com>",
