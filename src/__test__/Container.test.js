@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import Container from '../components/Container'
 
 it('Testing the render of Container', () => {
-    expect(shallow(<Container />)).toMatchSnapshot()
+    expect(shallow(<Container >Billie</Container>)).toMatchSnapshot()
 })
 
 
