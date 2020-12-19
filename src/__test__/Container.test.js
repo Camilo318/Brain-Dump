@@ -2,4 +2,16 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import Container from '../components/Container'
 
-shallow(<Container/>)
+it('Testing the render of Container', () => {
+    expect(shallow(<Container />)).toMatchSnapshot()
+})
+
+
+
+
+
+//shallow will render just the component itself, without any children within it. Test one thing a at time, as a unit (Unit Testings)
+
+//mount: Full render, mounts the component in the DOM
+
+//render: Render components to a static HTML, a middle point between mount ans shallow
