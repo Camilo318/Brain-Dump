@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Header = ({ children }) => {
+const Header = () => {
     return (
         <header>
             <div className="header__logo">
-                { children }
+                #braindump
             </div>
         </header>
     )
