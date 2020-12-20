@@ -1,9 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Container from '../components/Container'
+import toJson from 'json-schema'
 
 it('Testing the render of Container', () => {
-    expect(shallow(<Container >Billie</Container>)).toMatchSnapshot()
+    const wrapper = shallow(<Container />)
+    expect(toJson(wrapper)).toMatchSnapshot()
 })
 
 
