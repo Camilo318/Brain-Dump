@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Navigation = () => {
+    const [count, setCount] = useState(0)
+
+    const incrementCount = () => {
+        setCount(count + 1)
+        console.log(count)
+    }
     return (
         <nav>
-            <div className="nav__container">
+            <div className="nav__container" onClick={incrementCount}>
                 <div className="nav__item">
                     All
                 </div>
