@@ -4,7 +4,10 @@ const Navigation = () => {
     const [count, setCount] = useState(0)
 
     const incrementCount = () => {
-        setCount(count + 1)
+        //Pending state transaction.
+        setCount(c => c + 1)
+        //Accessing the state immediately after updating
+        //can return an old value
         console.log(count)
     }
     return (

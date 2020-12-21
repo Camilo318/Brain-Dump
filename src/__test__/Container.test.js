@@ -12,8 +12,8 @@ it('Testing the render of Container', () => {
 
 
 
-//shallow will render just the component itself, without any children within it. Test one thing a at time, as a unit (Unit Testings)
+//shallow will render just the component itself, without any children within it. Test one thing a at time, as a unit (Unit Testing)
 
 //mount: Full render, mounts the component in the DOM
 
-//render: Render components to a static HTML, a middle point between mount ans shallow
+//render: Render components to a static HTML, a middle point between mount and shallow
