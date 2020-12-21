@@ -3,6 +3,7 @@ import Header from './Header'
 import Navigation from './Navigation'
 import Container from './Container'
 import Add from './Add'
+import TodoList from './TodoList'
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
             <Container >
                 <Navigation />
                 <Add />
+                <TodoList />
             </Container>
         </>
     )
