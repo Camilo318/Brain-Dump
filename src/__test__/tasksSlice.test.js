@@ -39,5 +39,14 @@ describe('Testing tasks reducer', () => {
         expect(result).toEqual(state)
         //We return the unchanged state by default
     })
+
+    test('should toggle the completed prop in the task object', () => {
+        const action = {type: 'tasks/toggle-task', payload: 1}
+        const result = tasksReducer(state, action)
+        console.log(result)
+        expect(result[1].completed).toBeTruthy()
+        expect(state[1].completed).toBeFalsy()
+    })
+    
 })
 

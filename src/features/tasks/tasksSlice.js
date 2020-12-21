@@ -18,6 +18,18 @@ export default function tasksReducer(state = initialState, action) {
             return state.filter(task => task.id !== action.payload)
         }
 
+        case 'tasks/toggle-task': {
+            return state.map(task => {
+                if (task.id !== action.payload) {
+                    return task
+                }
+
+                return {
+                    ...task,
+                    completed: !task.completed
+                }
+            })
+        }
 
         default: {
             return state
