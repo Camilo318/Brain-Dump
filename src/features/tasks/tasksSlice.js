@@ -4,7 +4,7 @@ const initialState = [
     {id: 2, text: 'Study Redux', completed: false}
 ]
 
-export default function taskReducer(state = initialState, action) {
+export default function tasksReducer(state = initialState, action) {
     switch (action.type) {
         case 'tasks/add-task': {
             const { id, text } = action.payload
@@ -15,7 +15,7 @@ export default function taskReducer(state = initialState, action) {
         }
 
         case 'tasks/delete-task': {
-            return state.filter(task => task !== action.payload)
+            return state.filter(task => task.id !== action.payload)
         }
 
 
