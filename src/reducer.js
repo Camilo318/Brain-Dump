@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import taskReducer from './features/tasks'
+import taskReducer from './features/tasks/tasksSlice'
 
 const rootReducer = combineReducers({
-    task: taskReducer
+    tasks: taskReducer
 })
 
 

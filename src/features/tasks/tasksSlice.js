@@ -5,7 +5,7 @@ const initialState = [
 ]
 
 export default function taskReducer(state = initialState, action) {
-    switch (actioin.type) {
+    switch (action.type) {
         case 'tasks/add-task': {
             const { id, text } = action.payload
             return [
