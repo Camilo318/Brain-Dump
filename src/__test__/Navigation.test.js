@@ -9,7 +9,7 @@ it('Testing render of Navigation', () => {
     
 })
 
-it('Updates the counter', () => {
+it('Should render 3 items', () => {
     const wrapper = shallow(<Navigation />)
     expect(wrapper.find('.nav__item').length).toBe(3)
 })

@@ -1,25 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 
 const Navigation = () => {
-    const [count, setCount] = useState(0)
+    const dispatch = useDispatch()
 
-    const incrementCount = () => {
-        //Pending state transaction.
-        setCount(c => c + 1)
-        //Accessing the state immediately after updating
-        //can return an old value
-        console.log(count)
+    const hadleClick = e => {
+        const newView = e.target.dataset.view
+        if (!newView) return 
+        dispatch({
+            type: 'views/update-view',
+            payload: newView
+        })
+        console.log(newView)
     }
     return (
         <nav>
-            <div className="nav__container" onClick={incrementCount}>
-                <div className="nav__item">
+            <div className="nav__container" onClick={hadleClick}>
+                <div className="nav__item" data-view='all'>
                     All
                 </div>
-                <div className="nav__item">
+                <div className="nav__item" data-view='active'>
                     Active
                 </div>
-                <div className="nav__item">
+                <div className="nav__item" data-view='completed'>
                     Completed
                 </div>
             </div>
