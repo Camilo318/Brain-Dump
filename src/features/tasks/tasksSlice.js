@@ -5,10 +5,13 @@ const initialState = [
 ]
 
 const api = 'https://jsonplaceholder.typicode.com/todos'
+
 export async function fetchTodos(dispatch, getState) {
     const res = await fetch(api)
     const data = await res.json()
     const todos = data.slice(0, 5)
+    const prevState = getState()
+    console.log(prevState)
     dispatch({
         type: 'tasks/load-tasks',
         payload: todos
@@ -27,6 +30,18 @@ export default function tasksReducer(state = initialState, action) {
 
         case 'tasks/delete-task': {
             return state.filter(task => task.id !== action.payload)
+        }
+
+        case 'tasks/load-tasks': {
+            const newState = action.payload.map(task => (
+                {
+                    id: task.id,
+                    text: task.title,
+                    completed: task.completed
+                }
+            ))
+
+            return newState
         }
 
         case 'tasks/toggle-task': {
