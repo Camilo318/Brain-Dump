@@ -14,7 +14,8 @@
     padding: 1.125rem;
     cursor: pointer;
     position: relative;
-    &:hover {
+
+    &:hover, &.current {
         &::after {
             transform: scaleX(1);
         }
