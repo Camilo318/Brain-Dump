@@ -30,6 +30,7 @@ const Add = () => {
     return (
         <div className='add'>
             <input
+            id='addInput'
             type="text"
             placeholder='Add your stuff'
             value={text}
