@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Add = () => {
     const dispatch = useDispatch()
     const [text, setText] = useState('')
+
+    const notify = () => toast.success('New item added 😀')
 
     const handleChange = e => {
         setText(e.target.value)
@@ -22,7 +25,7 @@ const Add = () => {
                     text: txt
                 }
             })
-
+            notify()
             setText('')
         }
     }
@@ -37,6 +40,7 @@ const Add = () => {
             autoFocus={true}
             onChange={handleChange}
             onKeyDown={handleKeyDown}/>
+            <Toaster />
             <button>Add</button>
         </div>
     )
