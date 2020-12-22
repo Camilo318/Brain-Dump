@@ -4,7 +4,17 @@ import TodoItem from './TodoItem'
 
 const TodoList = () => {
     const tasks = useSelector(state => state.tasks)
-    const renderedTasks = tasks.map(task => (
+    const completedTasks = tasks.filter(task => task.completed)
+    const activeTasks = tasks.filter(task => !task.completed)
+    const { currentView } = useSelector(state => state.views)
+
+    const views = {
+        'all': tasks,
+        'active': activeTasks,
+        'completed': completedTasks
+    }
+
+    const renderedTasks = views[currentView].map(task => (
         <TodoItem key={task.id} task={task}/>
     ))
     return (

@@ -11,7 +11,6 @@ const Navigation = () => {
             type: 'views/update-view',
             payload: newView
         })
-        console.log(newView)
     }
     return (
         <nav>
