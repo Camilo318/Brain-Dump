@@ -4,6 +4,17 @@ const initialState = [
     {id: 2, text: 'Study Redux', completed: false}
 ]
 
+const api = 'https://jsonplaceholder.typicode.com/todos'
+export async function fetchTodos(dispatch, getState) {
+    const res = await fetch(api)
+    const data = await res.json()
+    const todos = data.slice(0, 5)
+    dispatch({
+        type: 'tasks/load-tasks',
+        payload: todos
+    })
+}
+
 export default function tasksReducer(state = initialState, action) {
     switch (action.type) {
         case 'tasks/add-task': {
