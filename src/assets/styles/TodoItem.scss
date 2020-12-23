@@ -18,7 +18,12 @@
     img {
         width: 18px;
         height: 18px;
-        margin-left: 2rem;
         visibility: hidden;
+        margin-left: 1rem;
+        &.edit {
+            margin-left: 2rem;
+            width: 28px;
+            height: 28px;
+        }
     }
 }

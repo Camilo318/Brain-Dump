@@ -3,9 +3,23 @@
     width: 90%;
     max-width: 610px;
     margin: 42px auto 1.125rem auto;
-    border-bottom: 1px solid #BDBDBD;
+    border-bottom: 2px solid #BDBDBD;
 }
 
+
+@mixin boder($color, $scale) {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px 4px 0 0;
+    background-color: $color;
+    width: 100%;
+    height: 4px;
+    transform-origin: 0 center;
+    transform: scaleX($scale);
+    transition: transform 0.3s ease;
+}
 .nav__item {
     flex: 1;
     text-align: center;
@@ -15,22 +29,9 @@
     cursor: pointer;
     position: relative;
 
-    &:hover, &.current {
+    &:hover, &.current{
         &::after {
-            transform: scaleX(1);
+            @include boder(#2F80ED, 1)
         }
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        border-radius: 4px 4px 0 0;
-        background-color: #2F80ED;
-        width: 110%;
-        height: 4px;
-        left: -5%;
-        transform-origin: 0 center;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
     }
 }
