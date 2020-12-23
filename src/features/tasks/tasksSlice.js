@@ -9,13 +9,14 @@ const initialState = [
 import { loadTasks } from './actions'
 const api = 'https://jsonplaceholder.typicode.com/todos'
 
-export async function fetchTodos(dispatch, getState) {
-    const res = await fetch(api)
-    const data = await res.json()
-    const todos = data.slice(0, 5)
-    const prevState = getState()
-    console.log(prevState)
-    dispatch(loadTasks(todos))
+export const fetchTodos = () => {
+    //thunk action creator
+    return async function fetchTodosThunk(dispatch, getState) {
+        const res = await fetch(api)
+        const data = await res.json()
+        const todos = data.slice(0, 5)
+        dispatch(loadTasks(todos))
+    }
 }
 
 export default function tasksReducer(state = initialState, action) {

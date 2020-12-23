@@ -1,5 +1,6 @@
 import React, { useRef }from 'react'
 import { useDispatch } from 'react-redux'
+import { updateView } from '../features/views/actions'
 
 const Navigation = () => {
     const dispatch = useDispatch()
@@ -11,10 +12,7 @@ const Navigation = () => {
         currentView.current = e.target
         currentView.current.classList.add('current')
         if (!newView) return 
-        dispatch({
-            type: 'views/update-view',
-            payload: newView
-        })
+        dispatch(updateView(newView))
     }
     return (
         <nav>
