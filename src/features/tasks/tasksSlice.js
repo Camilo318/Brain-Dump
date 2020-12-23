@@ -15,6 +15,8 @@ export const fetchTodos = () => {
         const res = await fetch(api)
         const data = await res.json()
         const todos = data.slice(0, 5)
+        const prevState = getState()
+        console.log(prevState)
         dispatch(loadTasks(todos))
     }
 }

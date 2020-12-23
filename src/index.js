@@ -6,7 +6,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import { fetchTodos } from './features/tasks/tasksSlice'
 
-store.dispatch(fetchTodos)
+store.dispatch((fetchTodos()))
 
 ReactDOM.render(
     <Provider store={store}>
