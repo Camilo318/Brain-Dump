@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
 import toast, { Toaster } from 'react-hot-toast'
 
+import { addTask } from '../features/tasks/actions'
+
 const Add = () => {
     const dispatch = useDispatch()
     const [text, setText] = useState('')
@@ -18,13 +20,7 @@ const Add = () => {
 
         if (e.which === 13 && txt) {
             const id = uniqid()
-            dispatch({
-                type: 'tasks/add-task',
-                payload: {
-                    id,
-                    text: txt
-                }
-            })
+            dispatch(addTask({id, text: txt}))
             notify()
             setText('')
         }

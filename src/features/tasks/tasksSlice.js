@@ -4,6 +4,9 @@ const initialState = [
     {id: 2, text: 'Study Redux', completed: false}
 ]
 
+
+//Import actions
+import { loadTasks } from './actions'
 const api = 'https://jsonplaceholder.typicode.com/todos'
 
 export async function fetchTodos(dispatch, getState) {
@@ -12,10 +15,7 @@ export async function fetchTodos(dispatch, getState) {
     const todos = data.slice(0, 5)
     const prevState = getState()
     console.log(prevState)
-    dispatch({
-        type: 'tasks/load-tasks',
-        payload: todos
-    })
+    dispatch(loadTasks(todos))
 }
 
 export default function tasksReducer(state = initialState, action) {
