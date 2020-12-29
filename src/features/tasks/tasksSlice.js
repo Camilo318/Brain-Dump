@@ -4,15 +4,16 @@ const initialState = [
     {id: 2, text: 'Study Redux', completed: false}
 ]
 
+import 'regenerator-runtime/runtime'
 
 //Import actions
 import { loadTasks } from './actions'
 const api = 'https://jsonplaceholder.typicode.com/todos'
 
-export const fetchTodos = () => {
+export const fetchTodos = (fetchApi) => {
     //thunk action creator
     return async function fetchTodosThunk(dispatch, getState) {
-        const res = await fetch(api)
+        const res = await fetchApi(api)
         const data = await res.json()
         const todos = data.slice(0, 5)
         const prevState = getState()
