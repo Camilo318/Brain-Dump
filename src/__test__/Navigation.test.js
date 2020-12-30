@@ -16,12 +16,12 @@ jest.mock('react-redux', () => {
 it('Testing render of Navigation', () => {
     const wrapper = shallow(<Navigation />)
     expect(wrapper).toMatchSnapshot()
-    expect(wrapper.find('.nav__container').length).toBe(1)
+    expect(wrapper.find('.nav__container')).toHaveLength(1)
     
 })
 
 it('Should render 3 items', () => {
     const wrapper = shallow(<Navigation />)
-    expect(wrapper.find('.nav__item').length).toBe(3)
+    expect(wrapper.find('.nav__item')).toHaveLength(3)
 })
 
