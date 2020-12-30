@@ -27,7 +27,7 @@ describe('Return the correct actions', () => {
     })
 
     test('should run thunk and dispatch', async () => {
-        expect.assertions(1)
+        expect.assertions(2)
         const store = mockStore()
         const payload = [
             {id: 1},
@@ -52,6 +52,7 @@ describe('Return the correct actions', () => {
         const [action] = store.getActions()
         console.log(action)
         expect(action).toEqual(expected)
+        expect(mockFetch.mock.calls).toHaveLength(1)
     })
     
     

@@ -18,7 +18,7 @@ const Add = () => {
     const handleKeyDown = e => {
         const txt = e.target.value.trim()
 
-        if (e.which === 13 && txt) {
+        if (e.which === 13 && txt.length > 2) {
             const id = uniqid()
             dispatch(addTask({id, text: txt}))
             notify()
